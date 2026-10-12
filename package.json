@@ -16,10 +16,17 @@
     "url": "git+https://github.com/zheli/pi-extensions.git"
   },
   "author": "Zhe Li <linuxcity.jin@gmail.com>",
+  "workspaces": [
+    "packages/*"
+  ],
   "pi": {
     "extensions": [
-      "./extensions/*.ts"
+      "./extensions/*.ts",
+      "./packages/rpiv-ask-user-question/index.ts"
     ]
+  },
+  "dependencies": {
+    "@juicesharp/rpiv-config": "^2.13.5"
   },
   "peerDependencies": {
     "@earendil-works/pi-agent-core": "*",
@@ -39,5 +46,8 @@
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "optionalDependencies": {
+    "@juicesharp/rpiv-i18n": "^2.13.5"
   }
 }
